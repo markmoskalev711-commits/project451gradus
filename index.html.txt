@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>451°: инженерия преследования</title>
+    <style>
+        /* ————— БАЗА — тёмный фон, современный минимум ————— */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0c0f;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 3rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* ————— ШАПКА (без изменений) ————— */
+        .project-header {
+            margin-bottom: 3.5rem;
+            border-left: 6px solid #ff5e1a;
+            padding-left: 2rem;
+        }
+
+        .project-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .project-header p {
+            font-size: 1.2rem;
+            color: #ff9f6e;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 0.5rem;
+        }
+
+        /* ————— СЕТКА СТАТЕЙ ————— */
+        .articles {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        /* ————— КАРТОЧКА УСТРОЙСТВА ————— */
+        article {
+            background: #14171c;
+            border: 1px solid #2f353e;
+            border-radius: 2.5rem;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 25px 40px -20px #000000cc;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        article:hover {
+            border-color: #ff5e1a;
+            box-shadow: 0 30px 50px -20px #ff5e1a66;
+        }
+
+        /* ————— ЗАГОЛОВОК УСТРОЙСТВА (h2) ————— */
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #ff5e1a;
+            padding-bottom: 0.75rem;
+            display: inline-block;
+        }
+
+        /* ————— ДВЕ КОЛОНКИ (ИНЖЕНЕРИЯ | ИСТОРИЯ) ————— */
+        .device-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .device-col {
+            flex: 1 1 300px; /* адаптивно, но минимум 300px */
+        }
+
+        .device-col h3 {
+            color: #ff8a5c;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            border-left: 3px solid #ff5e1a;
+            padding-left: 1rem;
+        }
+
+        .device-col p {
+            font-size: 1.05rem;
+            color: #d0d3da;
+            background: #1e2229;
+            padding: 1.5rem;
+            border-radius: 1.8rem;
+            box-shadow: inset 0 2px 5px #00000033;
+        }
+
+        /* небольшая деталь — для правой колонки можно чуть иной оттенок */
+        .device-col.history p {
+            background: #1b1f26;
+            border-left: 2px solid #ff8a5c;
+        }
+
+        /* ————— ПОДВАЛ ————— */
+        .footer {
+            margin-top: 5rem;
+            color: #6b6f77;
+            text-align: right;
+            border-top: 1px solid #22272e;
+            padding-top: 2rem;
+        }
+
+        .footer a {
+            color: #ff8a5c;
+            text-decoration: none;
+            border-bottom: 1px dotted;
+        }
+
+        /* ————— АДАПТАЦИЯ ————— */
+        @media (max-width: 700px) {
+            .project-header h1 { font-size: 2.2rem; }
+            article { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.9rem; }
+            .device-row { gap: 1rem; }
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ШАПКА (точно такая же, как в прошлой версии) -->
+        <header class="project-header">
+            <h1>451° по Фаренгейту</h1>
+            <p>инженерия преследования и контроля</p>
+        </header>
+
+        <div class="articles">
+            <!-- 1. Электрический пёс -->
+            <article>
+                <h2>Электрический пёс · Робототехника</h2>
+                <div class="device-row">
+                    <div class="device-col">
+                        <h3>Инженерная часть</h3>
+                        <p>Автономный восьмилапый робот-преследователь. Оборудован стальной иглой с транквилизатором и биометрическим сканером. Его главная фишка — датчики, настроенные на индивидуальный химический состав пота (аминокислоты) конкретного человека.</p>
+                    </div>
+                    <div class="device-col history">
+                        <h3>История</h3>
+                        <p>Это технологическая версия «псов войны». Со времен Древнего Рима и охоты на людей в колониальную эпоху собаки были главным инструментом поиска беглецов. Брэдбери просто заменил живое существо на безотказный механизм с сенсорами.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2. Стены-телевизоры -->
+            <article>
+                <h2>Стены-телевизоры · Мультимедиа</h2>
+                <div class="device-row">
+                    <div class="device-col">
+                        <h3>Инженерная часть</h3>
+                        <p>Полноразмерные видеопанели на всю площадь стен. Они работают в связке с интерактивными сценариями: диктор делает паузу, а зритель читает свою реплику по бумажке, имитируя участие в диалоге.</p>
+                    </div>
+                    <div class="device-col history">
+                        <h3>История</h3>
+                        <p>Это развитие идеи «Хлеба и зрелищ». Римские императоры строили огромные арены, чтобы масштаб зрелища подавлял личность. Здесь та же инженерия масс-медиа, но перенесенная в личное пространство квартиры.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3. «Ракушки» -->
+            <article>
+                <h2>«Ракушки» · Акустика</h2>
+                <div class="device-row">
+                    <div class="device-col">
+                        <h3>Инженерная часть</h3>
+                        <p>Миниатюрные беспроводные наушники-вкладыши. Используют электромагнитную передачу звука для создания «шумового кокона», который полностью изолирует человека от внешних звуков.</p>
+                    </div>
+                    <div class="device-col history">
+                        <h3>История</h3>
+                        <p>Прямая отсылка к пропагандистскому радио 1930-х годов. Тогда власти старались поставить радиоприемник в каждый дом. Брэдбери сделал следующий шаг — миниатюризировал устройство так, чтобы звук шел напрямую в ухо, не оставляя времени на тишину и мысли.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4. Пневмопоезд -->
+            <article>
+                <h2>Пневмопоезд · Транспорт</h2>
+                <div class="device-row">
+                    <div class="device-col">
+                        <h3>Инженерная часть</h3>
+                        <p>Система перемещения в вакуумных трубах под давлением воздуха. Скорость настолько высока, что пассажир не видит ничего, кроме размытых линий за окном.</p>
+                    </div>
+                    <div class="device-col history">
+                        <h3>История</h3>
+                        <p>Технология основана на реальных проектах пневмопочты XIX века (Лондон, Нью-Йорк). Там капсулы с письмами летали по трубам. Брэдбери масштабировал это до размеров транспорта, чтобы показать, как скорость стирает восприятие реальности.</p>
+                    </div>
+                </div>
+            </article>
+            <!-- 5. «Змея» (медицина) -->
+            <article>
+                <h2>«Змея» · Медицинская автоматика</h2>
+                <div class="device-row">
+                    <div class="device-col">
+                        <h3>Инженерная часть</h3>
+                        <p>Роботизированный зонд с оптическим датчиком («глазом») и двумя насосами. Один выкачивает токсины из желудка, второй — одновременно обновляет кровь во всем организме. Работает без участия врача.</p>
+                    </div>
+                    <div class="device-col history">
+                        <h3>История</h3>
+                        <p>Это результат промышленного подхода к медицине, который начался на фронтах Первой мировой. Когда спасение жизни превращается в конвейер, где важна только скорость и механика процесса, а не личность пациента.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <p>Индивидуальный проект · 2026 · <a href="#">451° по Фаренгейту</a></p>
+        </footer>
+    </div>
+</body>
+</html>
